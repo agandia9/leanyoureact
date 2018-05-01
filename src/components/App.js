@@ -14,7 +14,11 @@ class App extends Component {
 
   _handlerSearchName = (e) =>{
     e.preventDefault()
-    fetch(`https://api.github.com/users/${this.state.username}`).then(res => res.json()).then(data => {
+    this.state.onError 
+    ? this.setState({
+        onError:false
+      }) 
+    : fetch(`https://api.github.com/users/${this.state.username}`).then(res => res.json()).then(data => {
       data.message === "Not Found" ?
       this.setState({
         onError:true
@@ -50,7 +54,6 @@ class App extends Component {
             className="App-intro"
             userdata={this.state.userdata}>Insert a valid username and search info</MainContent>
           }
-          
       </div>
     );
   }

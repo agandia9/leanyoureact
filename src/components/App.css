@@ -26,3 +26,30 @@
   from { transform: rotate(0deg); }
   to { transform: rotate(23643260deg); }
 }
+
+.search-form{
+  padding-top: 5%;
+}
+
+.search-form > input{
+    border-radius: 0;
+    font-size: 20px;
+    border-left: 0;
+    border-top: 0;
+    border-right: 0;
+    border-bottom-width: 3px;
+    border-bottom-color: darkturquoise;
+}
+
+.search-form> button {
+  font-size: 20px;
+  background-color: darkturquoise;
+  margin-left: 50px;
+  padding: 15px;
+}
+
+.mainContent img {
+  border-radius: 50%;
+  border: 2px solid black;
+  width: 30%;
+}

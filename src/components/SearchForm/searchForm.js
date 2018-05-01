@@ -4,7 +4,10 @@ export default class SearchForm extends Component {
     render(){
         return(
             <div>
-                <form onSubmit={this.props._handlerSearchName}>
+                <form 
+                    onSubmit={this.props._handlerSearchName}
+                    className="search-form"
+                >
                     <input
                      onChange={this.props._handlerWriteName} 
                      type="text" 

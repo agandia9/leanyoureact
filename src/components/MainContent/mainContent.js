@@ -3,7 +3,7 @@ import React, {Component} from 'react'
 export default class MainContens extends Component {
     render(){
         return(
-            <div>
+            <div className="mainContent">
                 {Object.keys(this.props.userdata).length > 0 
                 ?  <div>
                     <p>Name: {this.props.userdata.name}</p>
@@ -12,7 +12,7 @@ export default class MainContens extends Component {
                     <span>Social: <p>{this.props.userdata.followers}</p><p>{this.props.userdata.following}</p></span>
                     <p>Location: {this.props.userdata.location}</p>
                 </div>
-                : <h1>{this.props.children}</h1>}
+                : <h3>{this.props.children}</h3>}
             </div>
         )
     }
