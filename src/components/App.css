@@ -46,8 +46,14 @@
   background-color: darkturquoise;
   margin-left: 50px;
   padding: 15px;
+  border-radius: 6px;
 }
-
+.mainContent{
+  background-color: lightsteelblue;
+  padding: 8%;
+  margin: 5%;
+  border: 1px solid black;
+}
 .mainContent img {
   border-radius: 50%;
   border: 2px solid black;

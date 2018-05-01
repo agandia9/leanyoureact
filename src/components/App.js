@@ -54,6 +54,7 @@ class App extends Component {
             className="App-intro"
             userdata={this.state.userdata}>Insert a valid username and search info</MainContent>
           }
+
       </div>
     );
   }

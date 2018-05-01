@@ -9,9 +9,9 @@ export default class SearchForm extends Component {
                     className="search-form"
                 >
                     <input
-                     onChange={this.props._handlerWriteName} 
-                     type="text" 
-                     placeholder="your github name"
+                        onChange={this.props._handlerWriteName} 
+                        type="text" 
+                        placeholder="your github name"
                     />
                     <button>Search for me, slave!</button>
                 </form>
