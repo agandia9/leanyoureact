@@ -5,8 +5,12 @@ export default class SearchForm extends Component {
         return(
             <div>
                 <form onSubmit={this.props._handlerSearchName}>
-                    <input type="text" placeholder="your github name"/>
-                    <button >Search for me, slave!</button>
+                    <input
+                     onChange={this.props._handlerWriteName} 
+                     type="text" 
+                     placeholder="your github name"
+                    />
+                    <button>Search for me, slave!</button>
                 </form>
             </div>
         )
