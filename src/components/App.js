@@ -8,12 +8,16 @@ import './App.css';
 class App extends Component {
   state = {
     username: '',
-    data:{}
+    userdata:{}
   }
 
   _handlerSearchName = (e) =>{
     e.preventDefault()
-    fetch(`https://api.github.com/users/${this.state.username}`).then(res => res.json()).then(data => console.log(data))
+    fetch(`https://api.github.com/users/${this.state.username}`).then(res => res.json()).then(data => {
+      this.setState({
+        userdata:data
+      })
+    })
   }
 
   _handlerWriteName = (e) =>{
@@ -26,13 +30,17 @@ class App extends Component {
       <div className="App">
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
-          <Title className="App-title">Welcome to React</Title>
+          <Title 
+            userdata={this.state.userdata}
+            className="App-title">Welcome to React</Title>
         </header>
           <SearchForm 
             _handlerSearchName={this._handlerSearchName} 
             _handlerWriteName={this._handlerWriteName}
           />
-          <MainContent className="App-intro" />
+          <MainContent 
+          className="App-intro"
+          userdata={this.state.userdata} />
       </div>
     );
   }
