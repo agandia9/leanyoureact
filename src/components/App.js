@@ -8,12 +8,17 @@ import './App.css';
 class App extends Component {
   state = {
     username: '',
-    userdata:{}
+    userdata:{},
+    onError:false
   }
 
   _handlerSearchName = (e) =>{
     e.preventDefault()
     fetch(`https://api.github.com/users/${this.state.username}`).then(res => res.json()).then(data => {
+      data.message === "Not Found" ?
+      this.setState({
+        onError:true
+      }) :
       this.setState({
         userdata:data
       })
@@ -38,9 +43,14 @@ class App extends Component {
             _handlerSearchName={this._handlerSearchName} 
             _handlerWriteName={this._handlerWriteName}
           />
-          <MainContent 
-          className="App-intro"
-          userdata={this.state.userdata}>Insert a valid username and search info</MainContent>
+          {
+           this.state.onError 
+           ?<h3>User not found :(</h3>
+           :<MainContent 
+            className="App-intro"
+            userdata={this.state.userdata}>Insert a valid username and search info</MainContent>
+          }
+          
       </div>
     );
   }
