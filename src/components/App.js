@@ -32,7 +32,7 @@ class App extends Component {
           <img src={logo} className="App-logo" alt="logo" />
           <Title 
             userdata={this.state.userdata}
-            className="App-title">Welcome to React</Title>
+           className="App-title">Welcome to React</Title>
         </header>
           <SearchForm 
             _handlerSearchName={this._handlerSearchName} 
@@ -40,7 +40,7 @@ class App extends Component {
           />
           <MainContent 
           className="App-intro"
-          userdata={this.state.userdata} />
+          userdata={this.state.userdata}>Insert a valid username and search info</MainContent>
       </div>
     );
   }
